@@ -119,6 +119,7 @@ import org.mockito.Mockito;
 
 public class TestRewriteDataFilesAction extends TestBase {
 
+  @TempDir private File tableDir;
   private static final int SCALE = 400000;
 
   private static final HadoopTables TABLES = new HadoopTables(new Configuration());
@@ -142,7 +143,6 @@ public class TestRewriteDataFilesAction extends TestBase {
 
   @BeforeEach
   public void setupTableLocation() throws Exception {
-    File tableDir = temp.resolve("junit").toFile();
     this.tableLocation = tableDir.toURI().toString();
   }
 
