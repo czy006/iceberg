@@ -157,7 +157,7 @@ class ManualSource<T>
 
   @Override
   public SourceReader<T, DummySplit> createReader(SourceReaderContext sourceReaderContext) {
-    return new SourceReader<>() {
+    return new SourceReader<T, DummySplit>() {
       @Override
       public void start() {
         // Do nothing

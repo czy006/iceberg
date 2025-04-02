@@ -320,7 +320,7 @@ class TestLockRemover extends OperatorTestBase {
 
     @Override
     public Committer<TaskResult> createCommitter(CommitterInitContext committerInitContext) {
-      return new Committer<>() {
+      return new Committer<TaskResult>() {
         @Override
         public void commit(Collection<CommitRequest<TaskResult>> collection) {
           // noop
@@ -335,7 +335,7 @@ class TestLockRemover extends OperatorTestBase {
 
     @Override
     public SimpleVersionedSerializer<TaskResult> getCommittableSerializer() {
-      return new SimpleVersionedSerializer<>() {
+      return new SimpleVersionedSerializer<TaskResult>() {
         @Override
         public int getVersion() {
           return 0;
